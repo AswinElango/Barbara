@@ -28,8 +28,9 @@ def git_commit():
         cmd="git commit -m "+'"'+msg+'"'
         print(cmd)
         os.system(cmd)
-        messagebox.showinfo("Commited")
         commit_FLAG=True
+        messagebox.showinfo("Commited")
+        
     else:
         messagebox.showerror("enter commit message")
         pass
