@@ -5,8 +5,6 @@ from  tkinter import messagebox
 root = Tk()
 root.geometry("300x300")
 
-global commit_FLAG
-commit_FLAG=False
 def git_add():
     cmd="git add ."
     os.system(cmd)
@@ -28,7 +26,7 @@ def git_commit():
         cmd="git commit -m "+'"'+msg+'"'
         print(cmd)
         os.system(cmd)
-        commit_FLAG=True
+        
         messagebox.showinfo("Commited")
         
     else:
@@ -37,13 +35,11 @@ def git_commit():
 commit_btn = Button(root,text="git commit",command = git_commit)
 commit_btn.pack()
 def git_push():
-    print(commit_FLAG)
-    if(commit_FLAG==True):
-        cmd="git push"
-        os.system(cmd)
-        messagebox.showinfo("Pushed")
-    else:
-        messagebox.showerror("Not commited")
+    cmd="git push"
+    os.system(cmd)
+    messagebox.showinfo("Pushed")
+   
+   
 push_btn = Button(root,text="git push",command = git_push)
 push_btn.pack()
 def git_pull():
