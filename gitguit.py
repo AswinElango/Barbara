@@ -37,7 +37,7 @@ def git_commit():
 commit_btn = Button(root,text="git commit",command = git_commit)
 commit_btn.pack()
 def git_push():
-    if(commit_FLAG):
+    if(commit_FLAG==True):
         cmd="git push"
         os.system(cmd)
         messagebox.showinfo("Pushed")
