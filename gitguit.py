@@ -40,7 +40,8 @@ def git_push():
         cmd="git push"
         os.system(cmd)
         messagebox.showinfo("Pushed")
-    pass
+    else:
+        messagebox.showerror("Not commited")
 push_btn = Button(root,text="git push",command = git_push)
 push_btn.pack()
 def git_pull():
