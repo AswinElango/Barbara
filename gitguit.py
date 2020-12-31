@@ -4,9 +4,9 @@ from tkinter import *
 from  tkinter import messagebox
 root = Tk()
 root.geometry("300x300")
-add_FLAG=False
-commit_FLAG=False
 
+global commit_FLAG
+commit_FLAG=False
 def git_add():
     cmd="git add ."
     os.system(cmd)
