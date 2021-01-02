@@ -6,7 +6,7 @@ root = Tk()
 root.geometry("300x300")
 def execute_cmd(cmd):
     y=sys.stdout
-    x=os.popen(cmd).read
+    x=os.popen(cmd).read()
     msg= Message(text=x)
     msg.pack()
     # return x
