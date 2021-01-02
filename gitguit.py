@@ -8,7 +8,7 @@ def execute_cmd(cmd):
     y=sys.stdout
     x=os.popen(cmd).read()
     print (x)
-    msg= Message(text=x,width=50)
+    msg= Message(text=x,width=500)
     msg.pack()
     # return x
 
