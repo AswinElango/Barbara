@@ -1,13 +1,20 @@
 import tkinter as tk
-import  os
+import  os,sys
 from tkinter import *
 from  tkinter import messagebox
 root = Tk()
 root.geometry("300x300")
+def execute_cmd(cmd):
+    y=sys.stdout
+    x=os.system(cmd)
+    msg= Message(text=x)
+    msg.pack()
+    # return x
 
+# execute_cmd("echo hello")
 def git_add():
     cmd="git add ."
-    os.system(cmd)
+    execute_cmd(cmd)
     add_FLAG=True
     messagebox.showinfo("Added")
     pass
@@ -21,10 +28,10 @@ T.pack()
 def git_commit(*push_call):
     msg=T.get("1.0",'end-1c')
     if(len(msg)>5):
-        os.system("git add .")
+        execute_cmd("git add .")
         cmd="git commit -m "+'"'+msg+'"'
         print(cmd)
-        os.system(cmd)
+        execute_cmd(cmd)
         if(not(push_call)):
             messagebox.showinfo("Commited")
     else:
@@ -35,14 +42,14 @@ commit_btn.pack()
 def git_push():
     git_commit(True)
     cmd="git push"
-    os.system(cmd)
+    execute_cmd(cmd)
     messagebox.showinfo("Pushed")
    
 push_btn = Button(root,text="git push",command = git_push)
 push_btn.pack()
 def git_pull():
     cmd="git pull"
-    os.system(cmd)
+    execute_cmd(cmd)
     pass
 pull_btn = Button(root,text="git pull",command = git_pull)
 pull_btn.pack()
