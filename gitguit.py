@@ -9,7 +9,7 @@ def execute_cmd(cmd):
     y=sys.stdout
     x.set(os.popen(cmd).read())
     print (x)
-    msg= Message(textvariable=x,width=70)
+    msg= Message(textvariable=x,relief=RAISED)
     msg.pack()
     # return x
 
