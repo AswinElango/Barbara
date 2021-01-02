@@ -3,10 +3,11 @@ import  os,sys
 from tkinter import *
 from  tkinter import messagebox
 root = Tk()
-root.geometry("300x300")
+root.geometry("400x300")
 def execute_cmd(cmd):
     y=sys.stdout
     x=os.popen(cmd).read()
+    print (x)
     msg= Message(text=x)
     msg.pack()
     # return x
